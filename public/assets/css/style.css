@@ -1,0 +1,235 @@
+/* Estilos personalizados para el sistema de certificados */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 600;
+}
+
+/* Botones */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    border: none;
+}
+
+/* DataTables personalización */
+.dataTables_wrapper {
+    padding: 0;
+}
+
+.dataTables_filter {
+    margin-bottom: 1rem;
+}
+
+.dataTables_filter input {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin-left: 8px;
+}
+
+.dataTables_length select {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    margin: 0 8px;
+}
+
+.dataTables_info {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Tabla */
+.table th {
+    border-top: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estados de certificados */
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+}
+
+.generate-cert {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+}
+
+/* Alertas */
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.alert-info {
+    background: linear-gradient(45deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+}
+
+.alert-success {
+    background: linear-gradient(45deg, #d4edda, #c3e6cb);
+    color: #155724;
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, #f8d7da, #f1b0b7);
+    color: #721c24;
+}
+
+/* Upload area */
+#uploadForm {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px dashed #dee2e6;
+    transition: border-color 0.3s ease;
+}
+
+#uploadForm:hover {
+    border-color: #007bff;
+}
+
+/* Estadísticas cards */
+.bg-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3) !important;
+}
+
+.bg-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34) !important;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Checkbox personalizado */
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Modal */
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: 2px solid #e9ecef;
+    background-color: #f8f9fa;
+}
+
+/* Iconos */
+.fa-certificate {
+    color: #ffc107;
+}
+
+.fa-users {
+    color: #007bff;
+}
+
+.fa-check-circle {
+    color: #28a745 !important;
+}

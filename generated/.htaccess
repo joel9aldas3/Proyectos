@@ -1,0 +1,4 @@
+# Permitir solo descarga controlada de PDFs
+<FilesMatch "\.pdf$">
+    Require all denied
+</FilesMatch>

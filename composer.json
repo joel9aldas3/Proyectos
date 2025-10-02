@@ -1,0 +1,14 @@
+{
+    "name": "certificados/app",
+    "description": "Sistema simple de certificados",
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "tecnickcom/tcpdf": "^6.6",
+        "twbs/bootstrap-icons": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
