@@ -79,11 +79,11 @@ class Certificate {
         // Configuraciones predefinidas por template
         $configs = [
             'template' => [ // Template por defecto
-                'name_x' => 50,
-                'name_y' => 95,
-                'name_size' => 36,
-                'course_y' => 115,
-                'course_size' => 24,
+                'name_x' => 30,
+                'name_y' => 87,
+                'name_size' => 25,
+                'course_y' => 116,
+                'course_size' => 20,
                 'date_y' => 170,
                 'date_size' => 14
             ],
@@ -119,8 +119,8 @@ class Certificate {
             $templatePath = $this->getTemplateForCourse($participantData['course']);
             $config = $this->getTemplateConfig($templatePath);
             
-            // Crear PDF
-            $pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
+            // Crear PDF con dimensiones específicas
+            $pdf = new TCPDF('L', 'mm', 'letter', true, 'UTF-8', false);
             
             // Configuración del documento
             $pdf->SetCreator('Sistema de Certificados');
@@ -131,33 +131,34 @@ class Certificate {
             $pdf->setPrintHeader(false);
             $pdf->setPrintFooter(false);
             
+            // Establecer márgenes a 0 para usar todo el espacio
+            $pdf->SetMargins(0, 0, 0);
+            $pdf->SetAutoPageBreak(false, 0);
+            
             // Optimizaciones
             $pdf->setRasterizeVectorImages(false);
             $pdf->SetCompression(true);
-            $pdf->setJPEGQuality(90);
+            $pdf->setJPEGQuality(100);
             
             // Agregar página
-            $pdf->AddPage();
+            $pdf->AddPage('L', 'A4');
             
             // Insertar imagen de fondo (template)
+            // A4 horizontal: 297mm x 210mm
             $pdf->Image($templatePath, 0, 0, 297, 210, 'PNG', '', '', false, 300, '', false, false, 0);
             
             // Configurar fuente para el nombre
             $pdf->SetFont('helvetica', 'B', $config['name_size']);
             $pdf->SetTextColor(0, 0, 0);
             
-            // Posición del nombre
+            // Posición del nombre - usando todo el ancho disponible
             $pdf->SetXY($config['name_x'], $config['name_y']);
-            $pdf->Cell(197, 15, $participantData['name'], 0, 1, 'C');
+            $pdf->Cell(237, 15, $participantData['name'], 0, 1, 'C');
             
-            // Curso
-            $pdf->SetFont('helvetica', '', 18);
-            $pdf->SetXY(50, $config['course_y'] - 15);
-            $pdf->Cell(197, 10, 'Por su participación en el curso:', 0, 1, 'C');
-            
+            // Curso - centrado y con más espacio
             $pdf->SetFont('helvetica', 'B', $config['course_size']);
-            $pdf->SetXY(50, $config['course_y']);
-            $pdf->Cell(197, 10, $participantData['course'], 0, 1, 'C');
+            $pdf->SetXY(30, $config['course_y']);
+            $pdf->Cell(237, 15, strtoupper($participantData['course']), 0, 1, 'C');
             
             /*/ Fecha
             $pdf->SetFont('helvetica', '', $config['date_size']);

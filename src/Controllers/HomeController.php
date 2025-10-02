@@ -38,7 +38,7 @@ class HomeController {
                     $actions .= '<button class="btn btn-sm btn-primary download-cert" 
                                    onclick="downloadCertificate(\'' . htmlspecialchars($certificateFile) . '\')" 
                                    title="Descargar certificado">
-                                   <i class="fas fa-download"></i>
+                                   <i class="bi bi-arrow-down-square-fill"></i>
                                  </button> ';
                     
                     // Botón enviar por email
@@ -46,7 +46,7 @@ class HomeController {
                                    data-id="' . $participant['id'] . '" 
                                    data-email="' . htmlspecialchars($participant['email']) . '"
                                    title="Enviar por email">
-                                   <i class="fas fa-envelope"></i>
+                                   <i class="bi bi-envelope-fill"></i>
                                  </button> ';
                 }
                 
@@ -56,7 +56,7 @@ class HomeController {
                 $actions .= '<button class="btn btn-sm btn-success generate-cert" 
                                data-id="' . $participant['id'] . '" 
                                title="Generar certificado">
-                               <i class="fas fa-certificate"></i> Generar
+                              <i class="bi bi-award"></i> Generar
                              </button>';
             }
             

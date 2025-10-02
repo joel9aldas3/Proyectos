@@ -201,13 +201,13 @@ function updateGenerateButton() {
     
     if (selectedCount > 0) {
         btn.prop('disabled', false);
-        btn.html('<i class="fas fa-certificate"></i> Generar (' + selectedCount + ')');
+        btn.html('<i class="bi bi-award"></i>Generar (' + selectedCount + ')');
         
         // Mostrar también el botón de enviar emails si hay seleccionados con certificados
         updateEmailButton();
     } else {
         btn.prop('disabled', true);
-        btn.html('<i class="fas fa-certificate"></i> Generar Seleccionados');
+        btn.html('<i class="bi bi-award-fill"></i>Generar Seleccionados');
         
         // Ocultar botón de enviar emails si no hay selección
         $('#sendSelectedEmailsBtn').remove();
@@ -237,7 +237,7 @@ function updateEmailButton() {
     if (withCertificates > 0) {
         if ($('#sendSelectedEmailsBtn').length === 0) {
             const btn = `<button class="btn btn-info btn-sm" id="sendSelectedEmailsBtn" title="Enviar certificados por email">
-                           <i class="fas fa-envelope"></i> Enviar Emails (${withCertificates})
+                           <i class="bi bi-envelope-arrow-up-fill"></i> Enviar Emails (${withCertificates})
                          </button>`;
             $('#generateSelectedBtn').after(' ' + btn);
             
@@ -245,7 +245,7 @@ function updateEmailButton() {
                 sendSelectedEmails();
             });
         } else {
-            $('#sendSelectedEmailsBtn').html(`<i class="fas fa-envelope"></i> Enviar Emails (${withCertificates})`);
+            $('#sendSelectedEmailsBtn').html(`<i class="bi bi-envelope-arrow-up-fill"></i> Enviar Emails (${withCertificates})`);
         }
     } else {
         $('#sendSelectedEmailsBtn').remove();
@@ -531,7 +531,7 @@ function checkMassDownloadButton() {
                 // Botón de descarga ZIP (FIJO)
                 if ($('#massDownloadBtn').length === 0) {
                     const btnDownload = `<button class="btn btn-primary btn-sm" id="massDownloadBtn" title="Descargar todos los certificados en un archivo ZIP">
-                                   <i class="fas fa-file-archive"></i> Descargar ZIP (${response.count})
+                                  <i class="bi bi-file-earmark-arrow-down-fill"></i> Descargar ZIP (${response.count})
                                  </button>`;
                     $('#generateSelectedBtn').after(' ' + btnDownload);
                     
